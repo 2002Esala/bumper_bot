@@ -100,6 +100,17 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -123,17 +134,6 @@ install/strip/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,6 +168,81 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+bumperbot_examples/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule:
+	cd /home/esala/bumperbot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bumperbot_examples/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule
+.PHONY : bumperbot_examples/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+tf2_msgs_generate_messages_py: bumperbot_examples/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule
+
+.PHONY : tf2_msgs_generate_messages_py
+
+# fast build rule for target.
+tf2_msgs_generate_messages_py/fast:
+	cd /home/esala/bumperbot_ws/build && $(MAKE) -f bumperbot_examples/CMakeFiles/tf2_msgs_generate_messages_py.dir/build.make bumperbot_examples/CMakeFiles/tf2_msgs_generate_messages_py.dir/build
+.PHONY : tf2_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+bumperbot_examples/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/esala/bumperbot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bumperbot_examples/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/rule
+.PHONY : bumperbot_examples/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+tf2_msgs_generate_messages_nodejs: bumperbot_examples/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : tf2_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+tf2_msgs_generate_messages_nodejs/fast:
+	cd /home/esala/bumperbot_ws/build && $(MAKE) -f bumperbot_examples/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/build.make bumperbot_examples/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/build
+.PHONY : tf2_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+bumperbot_examples/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule:
+	cd /home/esala/bumperbot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bumperbot_examples/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule
+.PHONY : bumperbot_examples/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+tf2_msgs_generate_messages_lisp: bumperbot_examples/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : tf2_msgs_generate_messages_lisp
+
+# fast build rule for target.
+tf2_msgs_generate_messages_lisp/fast:
+	cd /home/esala/bumperbot_ws/build && $(MAKE) -f bumperbot_examples/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build.make bumperbot_examples/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build
+.PHONY : tf2_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+bumperbot_examples/CMakeFiles/actionlib_generate_messages_py.dir/rule:
+	cd /home/esala/bumperbot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bumperbot_examples/CMakeFiles/actionlib_generate_messages_py.dir/rule
+.PHONY : bumperbot_examples/CMakeFiles/actionlib_generate_messages_py.dir/rule
+
+# Convenience name for target.
+actionlib_generate_messages_py: bumperbot_examples/CMakeFiles/actionlib_generate_messages_py.dir/rule
+
+.PHONY : actionlib_generate_messages_py
+
+# fast build rule for target.
+actionlib_generate_messages_py/fast:
+	cd /home/esala/bumperbot_ws/build && $(MAKE) -f bumperbot_examples/CMakeFiles/actionlib_generate_messages_py.dir/build.make bumperbot_examples/CMakeFiles/actionlib_generate_messages_py.dir/build
+.PHONY : actionlib_generate_messages_py/fast
+
+# Convenience name for target.
+bumperbot_examples/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule:
+	cd /home/esala/bumperbot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bumperbot_examples/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
+.PHONY : bumperbot_examples/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+actionlib_generate_messages_nodejs: bumperbot_examples/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
+
+.PHONY : actionlib_generate_messages_nodejs
+
+# fast build rule for target.
+actionlib_generate_messages_nodejs/fast:
+	cd /home/esala/bumperbot_ws/build && $(MAKE) -f bumperbot_examples/CMakeFiles/actionlib_generate_messages_nodejs.dir/build.make bumperbot_examples/CMakeFiles/actionlib_generate_messages_nodejs.dir/build
+.PHONY : actionlib_generate_messages_nodejs/fast
+
+# Convenience name for target.
 bumperbot_examples/CMakeFiles/turtlesim_generate_messages_cpp.dir/rule:
 	cd /home/esala/bumperbot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bumperbot_examples/CMakeFiles/turtlesim_generate_messages_cpp.dir/rule
 .PHONY : bumperbot_examples/CMakeFiles/turtlesim_generate_messages_cpp.dir/rule
@@ -181,6 +256,51 @@ turtlesim_generate_messages_cpp: bumperbot_examples/CMakeFiles/turtlesim_generat
 turtlesim_generate_messages_cpp/fast:
 	cd /home/esala/bumperbot_ws/build && $(MAKE) -f bumperbot_examples/CMakeFiles/turtlesim_generate_messages_cpp.dir/build.make bumperbot_examples/CMakeFiles/turtlesim_generate_messages_cpp.dir/build
 .PHONY : turtlesim_generate_messages_cpp/fast
+
+# Convenience name for target.
+bumperbot_examples/CMakeFiles/simple_cpp_subscriber.dir/rule:
+	cd /home/esala/bumperbot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bumperbot_examples/CMakeFiles/simple_cpp_subscriber.dir/rule
+.PHONY : bumperbot_examples/CMakeFiles/simple_cpp_subscriber.dir/rule
+
+# Convenience name for target.
+simple_cpp_subscriber: bumperbot_examples/CMakeFiles/simple_cpp_subscriber.dir/rule
+
+.PHONY : simple_cpp_subscriber
+
+# fast build rule for target.
+simple_cpp_subscriber/fast:
+	cd /home/esala/bumperbot_ws/build && $(MAKE) -f bumperbot_examples/CMakeFiles/simple_cpp_subscriber.dir/build.make bumperbot_examples/CMakeFiles/simple_cpp_subscriber.dir/build
+.PHONY : simple_cpp_subscriber/fast
+
+# Convenience name for target.
+bumperbot_examples/CMakeFiles/turtlesim_generate_messages_eus.dir/rule:
+	cd /home/esala/bumperbot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bumperbot_examples/CMakeFiles/turtlesim_generate_messages_eus.dir/rule
+.PHONY : bumperbot_examples/CMakeFiles/turtlesim_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+turtlesim_generate_messages_eus: bumperbot_examples/CMakeFiles/turtlesim_generate_messages_eus.dir/rule
+
+.PHONY : turtlesim_generate_messages_eus
+
+# fast build rule for target.
+turtlesim_generate_messages_eus/fast:
+	cd /home/esala/bumperbot_ws/build && $(MAKE) -f bumperbot_examples/CMakeFiles/turtlesim_generate_messages_eus.dir/build.make bumperbot_examples/CMakeFiles/turtlesim_generate_messages_eus.dir/build
+.PHONY : turtlesim_generate_messages_eus/fast
+
+# Convenience name for target.
+bumperbot_examples/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule:
+	cd /home/esala/bumperbot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bumperbot_examples/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule
+.PHONY : bumperbot_examples/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+tf2_msgs_generate_messages_cpp: bumperbot_examples/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : tf2_msgs_generate_messages_cpp
+
+# fast build rule for target.
+tf2_msgs_generate_messages_cpp/fast:
+	cd /home/esala/bumperbot_ws/build && $(MAKE) -f bumperbot_examples/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/build.make bumperbot_examples/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/build
+.PHONY : tf2_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 bumperbot_examples/CMakeFiles/turtlesim_generate_messages_lisp.dir/rule:
@@ -228,34 +348,19 @@ std_srvs_generate_messages_py/fast:
 .PHONY : std_srvs_generate_messages_py/fast
 
 # Convenience name for target.
-bumperbot_examples/CMakeFiles/turtlesim_generate_messages_eus.dir/rule:
-	cd /home/esala/bumperbot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bumperbot_examples/CMakeFiles/turtlesim_generate_messages_eus.dir/rule
-.PHONY : bumperbot_examples/CMakeFiles/turtlesim_generate_messages_eus.dir/rule
+bumperbot_examples/CMakeFiles/actionlib_generate_messages_lisp.dir/rule:
+	cd /home/esala/bumperbot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bumperbot_examples/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
+.PHONY : bumperbot_examples/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-turtlesim_generate_messages_eus: bumperbot_examples/CMakeFiles/turtlesim_generate_messages_eus.dir/rule
+actionlib_generate_messages_lisp: bumperbot_examples/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
 
-.PHONY : turtlesim_generate_messages_eus
+.PHONY : actionlib_generate_messages_lisp
 
 # fast build rule for target.
-turtlesim_generate_messages_eus/fast:
-	cd /home/esala/bumperbot_ws/build && $(MAKE) -f bumperbot_examples/CMakeFiles/turtlesim_generate_messages_eus.dir/build.make bumperbot_examples/CMakeFiles/turtlesim_generate_messages_eus.dir/build
-.PHONY : turtlesim_generate_messages_eus/fast
-
-# Convenience name for target.
-bumperbot_examples/CMakeFiles/simple_cpp_subscriber.dir/rule:
-	cd /home/esala/bumperbot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bumperbot_examples/CMakeFiles/simple_cpp_subscriber.dir/rule
-.PHONY : bumperbot_examples/CMakeFiles/simple_cpp_subscriber.dir/rule
-
-# Convenience name for target.
-simple_cpp_subscriber: bumperbot_examples/CMakeFiles/simple_cpp_subscriber.dir/rule
-
-.PHONY : simple_cpp_subscriber
-
-# fast build rule for target.
-simple_cpp_subscriber/fast:
-	cd /home/esala/bumperbot_ws/build && $(MAKE) -f bumperbot_examples/CMakeFiles/simple_cpp_subscriber.dir/build.make bumperbot_examples/CMakeFiles/simple_cpp_subscriber.dir/build
-.PHONY : simple_cpp_subscriber/fast
+actionlib_generate_messages_lisp/fast:
+	cd /home/esala/bumperbot_ws/build && $(MAKE) -f bumperbot_examples/CMakeFiles/actionlib_generate_messages_lisp.dir/build.make bumperbot_examples/CMakeFiles/actionlib_generate_messages_lisp.dir/build
+.PHONY : actionlib_generate_messages_lisp/fast
 
 # Convenience name for target.
 bumperbot_examples/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule:
@@ -271,6 +376,66 @@ std_srvs_generate_messages_cpp: bumperbot_examples/CMakeFiles/std_srvs_generate_
 std_srvs_generate_messages_cpp/fast:
 	cd /home/esala/bumperbot_ws/build && $(MAKE) -f bumperbot_examples/CMakeFiles/std_srvs_generate_messages_cpp.dir/build.make bumperbot_examples/CMakeFiles/std_srvs_generate_messages_cpp.dir/build
 .PHONY : std_srvs_generate_messages_cpp/fast
+
+# Convenience name for target.
+bumperbot_examples/CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule:
+	cd /home/esala/bumperbot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bumperbot_examples/CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule
+.PHONY : bumperbot_examples/CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+tf2_msgs_generate_messages_eus: bumperbot_examples/CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule
+
+.PHONY : tf2_msgs_generate_messages_eus
+
+# fast build rule for target.
+tf2_msgs_generate_messages_eus/fast:
+	cd /home/esala/bumperbot_ws/build && $(MAKE) -f bumperbot_examples/CMakeFiles/tf2_msgs_generate_messages_eus.dir/build.make bumperbot_examples/CMakeFiles/tf2_msgs_generate_messages_eus.dir/build
+.PHONY : tf2_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+bumperbot_examples/CMakeFiles/actionlib_generate_messages_cpp.dir/rule:
+	cd /home/esala/bumperbot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bumperbot_examples/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
+.PHONY : bumperbot_examples/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+actionlib_generate_messages_cpp: bumperbot_examples/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
+
+.PHONY : actionlib_generate_messages_cpp
+
+# fast build rule for target.
+actionlib_generate_messages_cpp/fast:
+	cd /home/esala/bumperbot_ws/build && $(MAKE) -f bumperbot_examples/CMakeFiles/actionlib_generate_messages_cpp.dir/build.make bumperbot_examples/CMakeFiles/actionlib_generate_messages_cpp.dir/build
+.PHONY : actionlib_generate_messages_cpp/fast
+
+# Convenience name for target.
+bumperbot_examples/CMakeFiles/simple_cpp_publisher.dir/rule:
+	cd /home/esala/bumperbot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bumperbot_examples/CMakeFiles/simple_cpp_publisher.dir/rule
+.PHONY : bumperbot_examples/CMakeFiles/simple_cpp_publisher.dir/rule
+
+# Convenience name for target.
+simple_cpp_publisher: bumperbot_examples/CMakeFiles/simple_cpp_publisher.dir/rule
+
+.PHONY : simple_cpp_publisher
+
+# fast build rule for target.
+simple_cpp_publisher/fast:
+	cd /home/esala/bumperbot_ws/build && $(MAKE) -f bumperbot_examples/CMakeFiles/simple_cpp_publisher.dir/build.make bumperbot_examples/CMakeFiles/simple_cpp_publisher.dir/build
+.PHONY : simple_cpp_publisher/fast
+
+# Convenience name for target.
+bumperbot_examples/CMakeFiles/std_srvs_generate_messages_eus.dir/rule:
+	cd /home/esala/bumperbot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bumperbot_examples/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
+.PHONY : bumperbot_examples/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+std_srvs_generate_messages_eus: bumperbot_examples/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
+
+.PHONY : std_srvs_generate_messages_eus
+
+# fast build rule for target.
+std_srvs_generate_messages_eus/fast:
+	cd /home/esala/bumperbot_ws/build && $(MAKE) -f bumperbot_examples/CMakeFiles/std_srvs_generate_messages_eus.dir/build.make bumperbot_examples/CMakeFiles/std_srvs_generate_messages_eus.dir/build
+.PHONY : std_srvs_generate_messages_eus/fast
 
 # Convenience name for target.
 bumperbot_examples/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule:
@@ -318,34 +483,19 @@ std_srvs_generate_messages_nodejs/fast:
 .PHONY : std_srvs_generate_messages_nodejs/fast
 
 # Convenience name for target.
-bumperbot_examples/CMakeFiles/std_srvs_generate_messages_eus.dir/rule:
-	cd /home/esala/bumperbot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bumperbot_examples/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
-.PHONY : bumperbot_examples/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
+bumperbot_examples/CMakeFiles/actionlib_generate_messages_eus.dir/rule:
+	cd /home/esala/bumperbot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bumperbot_examples/CMakeFiles/actionlib_generate_messages_eus.dir/rule
+.PHONY : bumperbot_examples/CMakeFiles/actionlib_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-std_srvs_generate_messages_eus: bumperbot_examples/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
+actionlib_generate_messages_eus: bumperbot_examples/CMakeFiles/actionlib_generate_messages_eus.dir/rule
 
-.PHONY : std_srvs_generate_messages_eus
+.PHONY : actionlib_generate_messages_eus
 
 # fast build rule for target.
-std_srvs_generate_messages_eus/fast:
-	cd /home/esala/bumperbot_ws/build && $(MAKE) -f bumperbot_examples/CMakeFiles/std_srvs_generate_messages_eus.dir/build.make bumperbot_examples/CMakeFiles/std_srvs_generate_messages_eus.dir/build
-.PHONY : std_srvs_generate_messages_eus/fast
-
-# Convenience name for target.
-bumperbot_examples/CMakeFiles/simple_cpp_publisher.dir/rule:
-	cd /home/esala/bumperbot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 bumperbot_examples/CMakeFiles/simple_cpp_publisher.dir/rule
-.PHONY : bumperbot_examples/CMakeFiles/simple_cpp_publisher.dir/rule
-
-# Convenience name for target.
-simple_cpp_publisher: bumperbot_examples/CMakeFiles/simple_cpp_publisher.dir/rule
-
-.PHONY : simple_cpp_publisher
-
-# fast build rule for target.
-simple_cpp_publisher/fast:
-	cd /home/esala/bumperbot_ws/build && $(MAKE) -f bumperbot_examples/CMakeFiles/simple_cpp_publisher.dir/build.make bumperbot_examples/CMakeFiles/simple_cpp_publisher.dir/build
-.PHONY : simple_cpp_publisher/fast
+actionlib_generate_messages_eus/fast:
+	cd /home/esala/bumperbot_ws/build && $(MAKE) -f bumperbot_examples/CMakeFiles/actionlib_generate_messages_eus.dir/build.make bumperbot_examples/CMakeFiles/actionlib_generate_messages_eus.dir/build
+.PHONY : actionlib_generate_messages_eus/fast
 
 nodes/simple_publisher.o: nodes/simple_publisher.cpp.o
 
@@ -411,21 +561,31 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... test"
+	@echo "... tf2_msgs_generate_messages_py"
+	@echo "... tf2_msgs_generate_messages_nodejs"
+	@echo "... tf2_msgs_generate_messages_lisp"
+	@echo "... actionlib_generate_messages_py"
+	@echo "... actionlib_generate_messages_nodejs"
 	@echo "... install/local"
 	@echo "... turtlesim_generate_messages_cpp"
+	@echo "... simple_cpp_subscriber"
+	@echo "... turtlesim_generate_messages_eus"
+	@echo "... tf2_msgs_generate_messages_cpp"
 	@echo "... turtlesim_generate_messages_lisp"
 	@echo "... install/strip"
 	@echo "... turtlesim_generate_messages_nodejs"
 	@echo "... std_srvs_generate_messages_py"
-	@echo "... turtlesim_generate_messages_eus"
-	@echo "... simple_cpp_subscriber"
+	@echo "... actionlib_generate_messages_lisp"
 	@echo "... std_srvs_generate_messages_cpp"
+	@echo "... tf2_msgs_generate_messages_eus"
+	@echo "... actionlib_generate_messages_cpp"
+	@echo "... simple_cpp_publisher"
+	@echo "... std_srvs_generate_messages_eus"
 	@echo "... std_srvs_generate_messages_lisp"
 	@echo "... turtlesim_generate_messages_py"
 	@echo "... std_srvs_generate_messages_nodejs"
-	@echo "... std_srvs_generate_messages_eus"
-	@echo "... simple_cpp_publisher"
-	@echo "... test"
+	@echo "... actionlib_generate_messages_eus"
 	@echo "... nodes/simple_publisher.o"
 	@echo "... nodes/simple_publisher.i"
 	@echo "... nodes/simple_publisher.s"
