@@ -5,4 +5,4 @@ from bumperbot_examples.tf_examples import TfExamples
 if __name__ == 'main':
     rospy.init_node('tf_exmples')
     tfExamples = TfExamples()
-    print("loser")
+    
