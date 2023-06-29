@@ -9,9 +9,20 @@ find_package(catkin REQUIRED COMPONENTS
   turtlesim
   tf2_ros
   geometry_msgs
+  message_generation
 )
 
 catkin_python_setup()
+
+add_service_files(
+  FILES
+  AddTwoInts.srv
+)
+
+generate_messages(
+  DEPENDENCIES
+  std_msgs
+)
 
 catkin_package(
   CATKIN_DEPENDS
@@ -31,6 +42,7 @@ catkin_install_python(PROGRAMS
   nodes/turtlesim_kinematics_node.py
   nodes/tf_examples_node.py
   nodes/simple_timer.py
+  nodes/simple_service_server.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
 
 add_executable(simple_cpp_publisher nodes/simple_publisher.cpp)
