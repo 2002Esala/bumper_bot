@@ -80,6 +80,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/esala/bumperbot_ws/src/bumperbot_examples/CMakeLists.txt"
   "/home/esala/bumperbot_ws/src/bumperbot_examples/nodes/simple_publisher.py"
   "/home/esala/bumperbot_ws/src/bumperbot_examples/nodes/simple_subscriber.py"
+  "/home/esala/bumperbot_ws/src/bumperbot_examples/nodes/simple_timer.py"
   "/home/esala/bumperbot_ws/src/bumperbot_examples/nodes/tf_examples_node.py"
   "/home/esala/bumperbot_ws/src/bumperbot_examples/nodes/turtlesim_kinematics_node.py"
   "/home/esala/bumperbot_ws/src/bumperbot_examples/package.xml"
