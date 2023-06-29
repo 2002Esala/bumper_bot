@@ -17,11 +17,13 @@ catkin_python_setup()
 add_service_files(
   FILES
   AddTwoInts.srv
+  GetTransform.srv
 )
 
 generate_messages(
   DEPENDENCIES
   std_msgs
+  geometry_msgs
 )
 
 catkin_package(
@@ -43,6 +45,7 @@ catkin_install_python(PROGRAMS
   nodes/tf_examples_node.py
   nodes/simple_timer.py
   nodes/simple_service_server.py
+  nodes/simple_service_client.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
 
 add_executable(simple_cpp_publisher nodes/simple_publisher.cpp)

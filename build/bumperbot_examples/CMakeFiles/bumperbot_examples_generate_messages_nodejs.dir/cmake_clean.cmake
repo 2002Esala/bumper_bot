@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "/home/esala/bumperbot_ws/devel/share/gennodejs/ros/bumperbot_examples/srv/AddTwoInts.js"
+  "/home/esala/bumperbot_ws/devel/share/gennodejs/ros/bumperbot_examples/srv/GetTransform.js"
   "CMakeFiles/bumperbot_examples_generate_messages_nodejs"
 )
 
