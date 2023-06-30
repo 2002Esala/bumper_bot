@@ -3,17 +3,28 @@ import rospy
 from std_msgs.msg import Float64
 from geometry_msgs.msg import Twist
 import numpy as np
+from sensor_msgs.msg import JointState
+import math
 
 class SimpleController(object):
 
     def __init__(self, wheel_radius, wheel_seperation):
         rospy.loginfo("Using wheel radius %d" % wheel_radius)
         rospy.loginfo("Using wheel seperation %d" % wheel_seperation)
+        self.wheel_radius_ = wheel_radius
+        self.wheel_seperation_ = wheel_seperation
+        self.left_wheel_prev_pos_ = 0.0
+        self.right_wheel_prev_pos_ = 0.0
+        self.prev_time_ = rospy.Time.now()
+        self.x_ = 0.0
+        self.y_ = 0.0
+        self.theta_ = 0.0
 
         self.right_cmd_pub_ = rospy.Publisher("wheel_right_controller/command", Float64, queue_size=10)
         self.left_cmd_pub_ = rospy.Publisher("wheel_left_controller/command", Float64, queue_size=10)
 
         self.vel_sub_ = rospy.Subscriber("bumperbot_controller/cmd_vel", Twist, self.velCallback)
+        self.joint_sub_ = rospy.Subscriber("joint_states", JointState, self.jointCallback)
 
         self.speed_conversion_ = np.array([[wheel_radius/2, wheel_radius/2],
                                            [wheel_radius/wheel_seperation, -wheel_radius/wheel_seperation]])
@@ -29,3 +40,29 @@ class SimpleController(object):
 
         self.right_cmd_pub_.publish(right_speed)
         self.left_cmd_pub_.publish(left_speed)
+    
+    def jointCallback(self, msg):
+        dp_left = msg.position[0] - self.left_wheel_prev_pos_
+        dp_right = msg.position[1] - self.right_wheel_prev_pos_
+        dt = (msg.header.stamp - self.prev_time_).to_sec()
+
+        self.left_wheel_prev_pos_ = msg.position[0]
+        self.right_wheel_prev_pos_ = msg.position[1]
+        self.prev_time_ = msg.header.stamp
+
+        fi_left = dp_left / dt        
+        fi_right = dp_right / dt
+
+        linear = (self.wheel_radius_ * fi_right + self.wheel_radius_ * fi_left)/2
+        angular = (self.wheel_radius_ * fi_right - self.wheel_radius_ * fi_left)/self.wheel_seperation_
+
+        d_s = (self.wheel_radius_ * dp_right + self.wheel_radius_ * dp_left)/2
+        d_theta = (self.wheel_radius_ * dp_right - self.wheel_radius_ *dp_left)/self.wheel_seperation_
+        self.theta_ +=d_theta
+        self.x_ += d_s * math.cos(self.theta_)
+        self.y_ += d_s * math.sin(self.theta_)
+        
+        rospy.loginfo('linear: %f angular: %f', linear, angular)
+        rospy.loginfo('x: %f',self.x_)
+        rospy.loginfo('y: %f',self.y_)
+        rospy.loginfo('theta: %f',self.theta_)
